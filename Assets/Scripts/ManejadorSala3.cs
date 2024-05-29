@@ -5,34 +5,68 @@ using UnityEngine;
 public class ManejadorSala3 : MonoBehaviour
 {
     public string expectedTag; // Tag esperado para el objeto que debe entrar en esta caja
-    public Vector3 respawnPosition;  // Lugar de Respawn
-    public Vector3 respawnPosition2;  // Lugar de Respawn
+    public Vector3 respawnPosition;  // Lugar de Respawn si entró el objeto equivocado
     public AudioSource audioSource;
     public AudioClip[] audioClips;
-
     public BoxCollider boxCollider;
+    public int boxID; // ID para identificar la caja (1 o 2)
+
+    public Animator characterAnimator; // Referencia al Animator del personaje
+    public RuntimeAnimatorController talk;
+    public RuntimeAnimatorController relax;
 
     void OnTriggerEnter(Collider other)
     {
         // Verificar si el objeto que ha entrado en la caja tiene el Tag correcto
         if (other.CompareTag(expectedTag))
         {
-            // El objeto es del tipo correcto, realiza la acción correspondiente
-            Debug.Log("Objeto correcto en la caja " + gameObject.name);
-            audioSource.clip = audioClips[0];
-            audioSource.Play();
+            // Se destruye el Objeto
+            Destroy(other.gameObject);
+
+            // Actualizar el estado en DepositManager
+            if (boxID == 1)
+            {   
+                DepositManager.object1Deposited = true;
+                if (DepositManager.AreBothObjectsDeposited())
+                {
+                    audioSource.clip = audioClips[1]; // Ambos objetos correctos
+                    audioSource.Play();
+                    // Se habilita la pared 
+                    boxCollider.enabled = false;
+                }
+                else {
+                    audioSource.clip = audioClips[0]; // Objeto correctamente
+                    audioSource.Play();
+                }
+                
+                
+            }
+            else if (boxID == 2)
+            {
+                DepositManager.object2Deposited = true;
+
+                if (DepositManager.AreBothObjectsDeposited())
+                {
+                    audioSource.clip = audioClips[1]; // Ambos objetos correctos
+                    audioSource.Play();
+                    // Se habilita la pared 
+                    boxCollider.enabled = false;
+                }
+                else {
+                    audioSource.clip = audioClips[0]; // Objeto correctamente
+                    audioSource.Play();
+                }
+            }
+
             
-            other.transform.position = respawnPosition;
-            boxCollider.enabled = false;
         }
         else
         {
-            // El objeto no es del tipo correcto, realiza una acción de error o ignora la colisión
-            Debug.Log("Objeto incorrecto en la caja " + gameObject.name);
-            audioSource.clip = audioClips[1];
+            // El objeto no es del tipo correcto
+            audioSource.clip = audioClips[2];
             audioSource.Play();
-            
-            other.transform.position = respawnPosition2;
+            // Respawn del objeto
+            other.transform.position = respawnPosition;
             
         }
         
