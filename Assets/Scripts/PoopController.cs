@@ -1,76 +1,42 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;  // Importar el espacio de nombres para trabajar con UI
 
 public class PoopController : MonoBehaviour
 {
-    public HingeJoint hingeJoint;  // Referencia al Hinge Joint
-    public GameObject meshObject1;  // Primer objeto con MeshRenderer
-    public GameObject meshObject2;  // Segundo objeto con MeshRenderer
-    public GameObject meshObject3;  // Tercer objeto con MeshRenderer
+    public List<GameObject> meshObjects = new List<GameObject>(); // Lista de objetos con MeshRenderer
+    public List<GameObject> meshBarreras = new List<GameObject>(); // Lista de Barreras para cada mesh
+    public GameObject cubetita; // La cubeta que el jugador interactúa
 
-    public GameObject meshBarrera1;  // Tercer objeto con MeshRenderer
-
-    public GameObject meshBarrera2;  // Tercer objeto con MeshRenderer
-
-    public GameObject meshBarrera3;  // Tercer objeto con MeshRenderer
-
+    public Button activationButton; // Botón de la interfaz de usuario para activar los objetos
 
     private int activationCount = 0;  // Contador para manejar las activaciones
-    private bool hasOpened = false;  // Flag para registrar si ha pasado los -50 grados
 
     void Start()
     {
-        StartCoroutine(HingeMonitor());
+        // Asegúrate de asignar el botón en el Inspector de Unity
+        activationButton.onClick.AddListener(HandleMeshActivation);
     }
 
-    IEnumerator HingeMonitor()
+    public void HandleMeshActivation()
     {
-        while (true)
+        int index = activationCount % meshObjects.Count; // Asegurar que el índice es cíclico dentro de la cantidad de objetos
+
+        if (meshBarreras[index].GetComponent<MeshRenderer>().enabled)
         {
-            yield return new WaitForSeconds(0.1f);  // Revisar el ángulo cada 0.5 segundos
-            if (hingeJoint != null)
-            {
-                if (hingeJoint.angle != 0)
-                    hasOpened = true;
-                
-                if (hasOpened && Mathf.Approximately(hingeJoint.angle, 0))
-                {
-                    HandleMeshActivation();
-                    hasOpened = false;  // Reset para la próxima vez
-                }
-            }
+            meshObjects[index].GetComponent<MeshRenderer>().enabled = true; // Activa el objeto si su correspondiente barrera está activa
+            cubetita.GetComponent<MeshRenderer>().enabled = false; // Opcional: desactivar la cubetita para simular que se vació
+            activationCount++; // Incrementar solo si se activa un objeto
+        }
+        else
+        {
+            Debug.Log($"La barrera {index} no está activa, no se puede activar el objeto {index}.");
         }
     }
 
-    void HandleMeshActivation()
+    void OnDestroy()
     {
-        // Incrementar el contador cada vez que el hinge joint llega a 0
-        activationCount++;
-
-        // Desactivar todos los meshes
-        meshObject1.GetComponent<MeshRenderer>().enabled = false;
-        meshObject2.GetComponent<MeshRenderer>().enabled = false;
-        meshObject3.GetComponent<MeshRenderer>().enabled = false;
-
-        // Lógica para activar el mesh correspondiente
-        switch (activationCount)
-        {
-            case 1:
-                if (meshObject1 != null && meshBarrera1.GetComponent<MeshRenderer>().enabled == true)
-                    meshObject1.GetComponent<MeshRenderer>().enabled = true;
-                break;
-            case 2:
-                if (meshObject2 != null && meshBarrera2.GetComponent<MeshRenderer>().enabled == true)
-                    meshObject2.GetComponent<MeshRenderer>().enabled = true;
-                break;
-            case 3:
-                if (meshObject3 != null && meshBarrera3.GetComponent<MeshRenderer>().enabled == true)
-                    meshObject3.GetComponent<MeshRenderer>().enabled = true;
-                break;
-            default:
-                Debug.Log("More than three activations or none of the objects are assigned.");
-                activationCount = 0;  // Reiniciar el contador para permitir cíclico
-                break;
-        }
+        // Es buena práctica remover los listeners cuando el objeto se destruye
+        activationButton.onClick.RemoveListener(HandleMeshActivation);
     }
 }
