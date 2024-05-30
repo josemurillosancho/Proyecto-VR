@@ -13,8 +13,12 @@ public class Caseta_3 : MonoBehaviour
     public ParticleSystem particulas4;
     public ParticleSystem particulas5;
     public Animator animador;
+    public Animator animador1;
     public GameObject plano;
+    public GameObject plano2;
+    public GameObject plano3;
     public Material material_1;
+    public Material material_2;
     int canno1 = 0;
     int canno2 = 0;
     int canno3 = 0;
@@ -26,16 +30,26 @@ public class Caseta_3 : MonoBehaviour
             canno1 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas1.Play();
             canno1 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno2 == 0){
@@ -43,16 +57,26 @@ public class Caseta_3 : MonoBehaviour
             canno2 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas2.Play();
             canno2 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno3 == 0){
@@ -60,16 +84,26 @@ public class Caseta_3 : MonoBehaviour
             canno3 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas3.Play();
             canno3 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno4 == 0){
@@ -77,16 +111,26 @@ public class Caseta_3 : MonoBehaviour
             canno4 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas4.Play();
             canno4 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }        
     }
@@ -96,16 +140,26 @@ public class Caseta_3 : MonoBehaviour
             canno2 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas2.Play();
             canno2 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno3 == 0){
@@ -113,16 +167,26 @@ public class Caseta_3 : MonoBehaviour
             canno3 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas3.Play();
             canno3 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno4 == 0){
@@ -130,16 +194,26 @@ public class Caseta_3 : MonoBehaviour
             canno4 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas4.Play();
             canno4 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno5 == 0){
@@ -147,16 +221,26 @@ public class Caseta_3 : MonoBehaviour
             canno5 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas5.Play();
             canno5 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }        
     }
@@ -166,16 +250,26 @@ public class Caseta_3 : MonoBehaviour
             canno1 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas1.Play();
             canno1 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno3 == 0){
@@ -183,16 +277,26 @@ public class Caseta_3 : MonoBehaviour
             canno3 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas3.Play();
             canno3 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }
         if(canno5 == 0){
@@ -200,16 +304,26 @@ public class Caseta_3 : MonoBehaviour
             canno5 = 1;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }else{
             particulas5.Play();
             canno5 = 0;
             if(canno1 == 1 & canno2 == 1 & canno3 == 1 & canno4 == 1 & canno5 == 1){
                 animador.SetBool("puerta3",true);
+                animador1.SetBool("Arboles3",true);
                 Renderer rend = plano.GetComponent<Renderer>();
                 rend.material = material_1;
+                Renderer rend2 = plano2.GetComponent<Renderer>();
+                rend2.material = material_2;
+                Renderer rend3 = plano3.GetComponent<Renderer>();
+                rend3.material = material_2;
             }
         }         
     }
